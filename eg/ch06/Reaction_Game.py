@@ -16,3 +16,5 @@ led.value(1)
 time.sleep(random.uniform(5, 10))
 led.value(0)
 button.irq(trigger=machine.Pin.IRQ_RISING, handler=btn_handler)
+
+time.sleep(1)  # Gives some time before the program ends
