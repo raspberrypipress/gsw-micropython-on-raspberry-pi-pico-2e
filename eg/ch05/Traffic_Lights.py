@@ -8,8 +8,7 @@ led_green = machine.Pin(13, machine.Pin.OUT)
 button = machine.Pin(16, machine.Pin.IN, machine.Pin.PULL_DOWN)
 buzzer = machine.Pin(12, machine.Pin.OUT)
 
-# global button_pressed
-button_pressed = False  # No need for global
+button_pressed = False
 
 def button_reader_thread():
     global button_pressed 
@@ -28,8 +27,6 @@ while True:
             time.sleep(0.04) 
             buzzer.value(0)
             time.sleep(0.2)
-        # global button_pressed  # No need for global, main thread, 
-        # same scope where the button_pressed variable was defined
         button_pressed = False
     led_red.value(1)
     time.sleep(5)
