@@ -22,7 +22,7 @@ start_time = time.ticks_ms()
 left_btn.irq(trigger=machine.Pin.IRQ_FALLING, handler=btn_handler)
 right_btn.irq(trigger=machine.Pin.IRQ_FALLING, handler=btn_handler)
 while fastest_btn is None:
-    time.sleep(1) 
+    time.sleep(1)
 if fastest_btn is left_btn:
     print("Left Player wins!")
 elif fastest_btn is right_btn:
