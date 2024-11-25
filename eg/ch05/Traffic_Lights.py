@@ -21,7 +21,7 @@ while True:
         led_red.value(1)
         for i in range(20):
             buzzer.value(1)
-            time.sleep(0.05) 
+            time.sleep(0.05)
             buzzer.value(0)
             time.sleep(0.2)
         button_pressed = False
