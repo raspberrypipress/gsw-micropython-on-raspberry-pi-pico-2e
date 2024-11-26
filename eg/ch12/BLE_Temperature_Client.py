@@ -4,7 +4,7 @@ import aioble
 import bluetooth
 
 ble_name = "picow_ble"
-ble_service_uuid = bluetooth.UUID(0x181A)
+ble_svc_uuid = bluetooth.UUID(0x181A)
 ble_characteristic_uuid = bluetooth.UUID(0x2A6E)
 ble_scan_length = 5000
 ble_interval = 30000
@@ -19,7 +19,7 @@ async def ble_scan():
     active=True) as scanner:
         async for result in scanner:
             if result.name() == ble_name and \
-               ble_service_uuid in result.services():
+               ble_svc_uuid in result.services():
                 return result.device
     return None
 
@@ -41,16 +41,16 @@ async def main():
 
     async with connection:
         try:
-            ble_service = await connection.service(ble_service_uuid)
+            ble_service = await connection.service(ble_svc_uuid)
             ble_characteristic = await \
               ble_service.characteristic(ble_characteristic_uuid)
         except (asyncio.TimeoutError, AttributeError):
-            print("Timeout discovering services or characteristics.")
+            print("Timeout discovering services/characteristics.")
             return
 
         while True:
-            temperature = decode_temp(await ble_characteristic.read())
-            print("Temperature:", temperature)
+            temp = decode_temp(await ble_characteristic.read())
+            print("Temperature:", temp)
             await asyncio.sleep_ms(2000)
 
 asyncio.run(main())
