@@ -2,7 +2,7 @@ from connect import wlan
 import socket
 import machine
 
-sensor_temp = machine.ADC(4)
+sensor_temp = machine.ADC(machine.ADC.CORE_TEMP)
 conversion_factor = 3.3 / (65535)
 
 address = socket.getaddrinfo("0.0.0.0", 80)[0][-1]

@@ -3,7 +3,7 @@ import asyncio
 import aioble
 import bluetooth
 
-sensor_temp = machine.ADC(4)
+sensor_temp = machine.ADC(machine.ADC.CORE_TEMP)
 conversion_factor = 3.3 / (65535)
 
 ble_name = "picow_ble"
