@@ -1,7 +1,7 @@
 import machine
 import time
 
-snsr_pir = machine.Pin(28, machine.Pin.IN, machine.Pin.PULL_DOWN)
+snsr_pir = machine.Pin(28, machine.Pin.IN)
 led = machine.Pin(15, machine.Pin.OUT)
 
 def pir_handler(pin):

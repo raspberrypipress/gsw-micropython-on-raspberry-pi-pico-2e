@@ -1,8 +1,8 @@
 import machine
 import time
 
-snsr_pir = machine.Pin(28, machine.Pin.IN, machine.Pin.PULL_DOWN)
-snsr_pir2 = machine.Pin(18, machine.Pin.IN, machine.Pin.PULL_DOWN)
+snsr_pir = machine.Pin(28, machine.Pin.IN)
+snsr_pir2 = machine.Pin(18, machine.Pin.IN)
 led = machine.Pin(15, machine.Pin.OUT)
 buzzer = machine.Pin(14, machine.Pin.OUT)
 
