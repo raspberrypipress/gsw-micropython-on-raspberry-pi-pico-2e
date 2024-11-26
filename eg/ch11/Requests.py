@@ -16,7 +16,7 @@ while max_wait > 0:
     if wlan.status() < 0 or wlan.status() >= 3:
         break
     max_wait -= 1
-    print("Waiting for Wi-Fi connection…")
+    print("Waiting for Wi-Fi connection...")
     time.sleep(1)
 
 if wlan.status() != 3:
@@ -25,6 +25,6 @@ else:
     print("Connected to Wi-Fi network.")
     print(wlan.ifconfig())
 
-response = requests.get("https://text.npr.org")
+response = requests.get("https://text.npr.org/")
 [print(x) for x in response.content.splitlines()]
 response.close()
