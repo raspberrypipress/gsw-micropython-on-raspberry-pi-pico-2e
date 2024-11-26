@@ -46,13 +46,12 @@ print("green")
 for j in range(0, 255):
     for i in range(NUM_LEDS):
         ar[i] = j<<16
-sm.put(ar,8)
-time.sleep_ms(10)
+    sm.put(ar,8)
+    time.sleep_ms(10)
 
 print("white")
 for j in range(0, 255):
     for i in range(NUM_LEDS):
-        ar[i] = j + (j<<16) + (j<<8) + j
+        ar[i] = (j<<16) + (j<<8) + j
     sm.put(ar,8)
     time.sleep_ms(10)
-
