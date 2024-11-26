@@ -55,4 +55,3 @@ while True:
     except OSError as e:
         client.close()
         print("Error, connection closed.")
-        

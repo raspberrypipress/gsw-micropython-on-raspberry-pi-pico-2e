@@ -54,7 +54,7 @@ while True:
 
         else:
             button_link = "/led/on"
-            button_text = "Turn LED on" 
+            button_text = "Turn LED on"
 
         response = html % (led_state,button_link,button_text)
 
@@ -66,4 +66,4 @@ while True:
     except OSError as e:
         client.close()
         print("Error, connection closed.")
-        
+

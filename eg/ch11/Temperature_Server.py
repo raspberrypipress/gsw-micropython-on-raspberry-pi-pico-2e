@@ -3,7 +3,7 @@ import socket
 import machine
 
 sensor_temp = machine.ADC(machine.ADC.CORE_TEMP)
-conversion_factor = 3.3 / (65535)
+conversion_factor = 3.3 / (65534)
 
 address = socket.getaddrinfo("0.0.0.0", 80)[0][-1]
 s = socket.socket()
@@ -16,6 +16,7 @@ while True:
     try:
         reading = sensor_temp.read_u16() * conversion_factor
         temperature = 27 - (reading - 0.706) / 0.001721
+
         client, address = s.accept()
         print("Connection accepted from", address)
         client_file = client.makefile("rwb", 0)

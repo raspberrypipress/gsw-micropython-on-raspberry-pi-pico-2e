@@ -1,10 +1,10 @@
 from connect import wlan
 import socket
-from machine import ADC
+import machine
 
 address = socket.getaddrinfo("0.0.0.0", 80)[0][-1]
 s = socket.socket()
-s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) 
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind(address)
 s.listen(1)
 print("Listening for connections on", wlan.ifconfig()[0])
