@@ -9,4 +9,6 @@ See all the issues readers have reported with this book:
 * [Open issues](https://github.com/raspberrypipress/gsw-micropython-on-raspberry-pi-pico-2e/issues)
 * [Issues corrected in the second printing](https://github.com/raspberrypipress/gsw-micropython-on-raspberry-pi-pico-2e/issues?q=label%3A%222nd%20printing%22%20)
 
+(The first printing will have "June 2024: Second Edition" on the copyright page, while the second printing reads "January 2025: Second Edition, Second Printing".)
+
 <img src="https://github.com/raspberrypipress/gsw-micropython-on-raspberry-pi-pico-2e/blob/main/images/9781912047291.jpg?raw=true" width="600" alt="Book cover image" />
